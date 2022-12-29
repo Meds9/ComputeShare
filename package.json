@@ -1,10 +1,12 @@
 {
-  "name": "backend",
+  "name": "computeshare",
   "version": "1.0.0",
-  "description": "Express backend",
-  "main": "app.js",
+  "description": "Compute Share",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"cd backend && yarn run dev\" \"cd frontend && yarn start\" "
+
   },
   "author": "Mehdi M",
   "license": "MIT",
@@ -12,5 +14,7 @@
     "express": "^4.18.2",
     "express-generator": "^4.16.1",
     "global": "^4.4.0"
-  }
+  },
+  "private": true,
+  "workspaces": ["backend", "frontend"]
 }
