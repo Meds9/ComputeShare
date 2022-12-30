@@ -27,6 +27,11 @@ app.use('/users', usersRouter);
 
 const client = new ClientSingleton(db.url).client;
 
+// Connect to db using MongoClient
+db.connect(db.url, function(client) {
+
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
